@@ -1,0 +1,271 @@
+* {
+  width: 100%;
+  height: 100%;
+  font: 11pt 'MicroSoft YaHei';
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  list-style: none;
+  outline: none;
+}
+
+input {
+  border:0;
+}
+
+
+header {
+  height: 45px;
+  /* background-color: #FF5108; */
+  color: #f2f2f2;
+  border-bottom: 1px rgb(218, 71, 8) solid;
+  display: flex;
+}
+
+header ul {
+  height: 35px;
+  padding: 5px 0;
+  flex: 2;
+}
+
+header ul:nth-child(1) li,
+header ul:nth-child(3) li {
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+header ul:nth-child(1) li div,
+header ul:nth-child(3) li div {
+  width: 20px;
+  position: relative;
+  overflow: visible;
+}
+
+header ul:nth-child(1) li div {
+  background: #fff url(/img/zhaopian.png) no-repeat 0 0;
+  background-size: 100%;
+
+}
+
+header ul:nth-child(3) li div {
+  background: #fff url(/img/taolun.png) no-repeat 0 0;
+  background-size: 100%;
+}
+header ul:nth-child(3) li div:before {
+  content: attr(data-before);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  border: 1px #fff solid;
+  color: #fff;
+  font-size: 10px;
+}
+
+header ul:nth-child(1) p,
+header ul:nth-child(3) p {
+  color: #666;
+  font-size: 12px;
+}
+
+header ul:nth-child(2) {
+  flex: 6;
+  position: relative;
+}
+
+header ul:nth-child(2) li:first-child {
+  width: calc(100% - 2px);
+  height: 10px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  border: 1px #666 solid;
+  border-top: 0;
+}
+header ul:nth-child(2) li:last-child div {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  background: #fff url(/img/xiangji.png) no-repeat 0 0;
+  background-size: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+header ul:nth-child(2) li:last-child div:first-child {
+  background: #fff url(/img/xiangji.png) no-repeat 0 0;
+  background-size: 100%;
+}
+header ul:nth-child(2) li:last-child input {
+  width: calc(100% - 72px);
+  display: inline-block;
+  vertical-align: bottom;
+}
+header ul:nth-child(2) li:last-child div:last-child {
+  background: #fff url(/img/sousuo.png) no-repeat 0 0;
+  background-size: 100%;
+}
+
+body {
+  overflow-y: scroll;
+}
+.container {
+  padding: 5px;
+  background-color: #f2f2f2;
+  overflow-y: scroll;
+}
+
+.container li {
+  height: 150px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.034);
+}
+#slider-wrap.active #next {
+  right: 15px;
+}
+#slider img {
+  height: auto;
+}
+
+.selects div {
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.selects p {
+  margin: 5px;
+  margin-right: 0;
+  flex: 1;
+}
+.selects div p:last-child {
+  margin-right: 5px;
+}
+.selects p li {
+  width: calc(100% - 10px);
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  box-shadow:none;
+}
+.selects p h6 {
+  font-size: 10px;
+  position: relative;
+  left: -5px;
+}
+
+.container .news {
+  height: 80px;
+}
+.news .newsP {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.news .newsP:nth-child(1) {
+  height: calc(100% - 5px);
+  background: #fff url(/img/19.png) no-repeat center;
+  background-size: 80%;
+}
+.news .newsP:nth-child(2) {
+  width: calc(100% - 100px);
+}
+.news .newsP:nth-child(2) div {
+  height: 30px;
+  padding-top: 10px;
+}
+.news .newsP:nth-child(2) div:last-child {
+  padding-top: 5px;
+}
+.news .newsP:nth-child(2) h5 {
+  width: calc(100% - 60px);
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.news span {
+  width: 40px;
+  height: 20px;
+  color: #ff0000;
+  border: 1px #ff0000 solid;
+  margin-right: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container .introduce {
+  height: auto;
+  min-height: 400px;
+}
+.introduce ul {
+  width: calc(50% - 12px);
+  border: 1px #dadada solid;
+  margin: 5px;
+  float: left;
+  position: relative;
+}
+.introduce ul:nth-child(even) {
+  margin-left: 0;
+}
+.introduce ul li {
+  height: 100%;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+.introduce ul li:first-child {
+  width: 60%;
+  font-size: 14pt;
+  color: #ff0000;
+  font-weight: bold;
+  padding: 10px 0;
+}
+.introduce ul li:first-child i {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -1px;
+}
+.introduce ul li p {
+  width: calc(100% - 35px);
+  height: 25px;
+}
+.introduce ul li i,.introduce ul li p {
+  display: inline-block;
+  vertical-align: middle;
+}
+.introduce ul li:nth-child(2) {
+  width: 40%;
+  background-size: 50%;
+}
+.introduce ul li:nth-child(3) {
+  width: 50%;
+  height: calc(100% - 50px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 50%;
+}
+
+.introduce ul:nth-child(2) li:nth-child(1) {
+  color: #0000ff;
+}
+.introduce ul:nth-child(3) li:nth-child(1) {
+  color: #00ffff;
+}
+.introduce ul:nth-child(4) li:nth-child(1) {
+  color: orangered;
+}
+
+footer {
+  height: 45px;
+  border-top: 1px #dadada solid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}

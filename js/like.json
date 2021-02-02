@@ -1,0 +1,25 @@
+{
+  "status": "200",
+  "message": "上传成功",
+  "result": [
+    {"id":"1","sort": "女装","band": "peacebird","title":"冬装 大衣 黑色","post": "http://127.0.0.1:5500/img/1.png","img": "http://127.0.0.1:5500/img/1.png"},
+    {"id":"2","sort": "男装","band": "Donlion","title":"围巾 针织","post": "http://127.0.0.1:5500/img/2.png","img": "http://127.0.0.1:5500/img/2.png"},
+    {"id":"3","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"4","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"5","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"6","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"7","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"8","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"9","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"10","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"11","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"12","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"13","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"14","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"15","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"16","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"17","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"18","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"},
+    {"id":"19","sort": "童装","band": "gxg-child","title":"羽绒服 短款 保暖","post": "http://127.0.0.1:5500/img/3.png","img": "http://127.0.0.1:5500/img/3.png"}
+  ]
+}

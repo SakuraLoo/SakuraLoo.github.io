@@ -1,0 +1,8 @@
+{
+  "status": "200",
+  "message": "上传成功",
+  "result": [
+    {"id":"1","title":"震惊！三十年未剪头发的长发公主","link":"good.hmtl"},
+    {"id":"2","title":"三十天实验不洗脸，会变成什么样子","link":"good.hmtl"}
+  ]
+}
