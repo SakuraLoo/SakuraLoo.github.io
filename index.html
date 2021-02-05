@@ -1,158 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 外部引用 -->
+    <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="libs/vue/vue.min.js"></script>
+    <script src="libs/rem/rem.js"></script>
+    <!-- 自定义 通用 -->
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, height=device-height">
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/flex1.css">
-</head>
+  <body>
+    <section class="window">
+      <!-- 登录页面 -->
+      <iframe src="login.html" v-if="loginShow"></iframe>
+      <!-- 主要页面 -->
+      <iframe src="home.html" v-if="!loginShow"></iframe>
+    </section>
+  </body>
 
-<body>
-
-  <header>
-    <ul>
-      <li>
-        <div></div>
-      </li>
-      <p>扫一扫</p>
-    </ul>
-    <ul>
-      <li></li>
-      <li>
-        <div></div>
-        <input />
-        <div></div>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <div></div>
-      </li>
-      <p>消息</p>
-    </ul>
-  </header>
-
-
-  <div class="container">
-    <li class="banner">
-      <div id="wrapper">
-        <div id="slider-wrap">
-          <ul id="slider">
-            <li><img /></li>
-            <li><img /></li>
-            <li><img /></li>
-            <li><img /></li>
-            <li><img /></li>
-          </ul>
-          <!--controls-->
-          <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
-          <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
-          <div id="counter"></div>
-          <div id="pagination-wrap"><ul></ul></div>
-          <!--controls-->
-        </div>
-      </div>
-    </li>
-
-    <li class="selects"><div></div><div></div></li>
-
-    <li class="news">
-      <div class="newsP"></div>
-      <div class="newsP">
-        <div><span>热议</span><h5></h5></div>
-        <div><span>热议</span><h5></h5></div>
-      </div>
-    </li>
-
-    <li class="introduce"></li>
-
-  </div>
-
-
-  <footer></footer>
-
-</body>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/slider.js"></script>
-<script>
-  $(function () {
-    var scanner = $('header ul:nth-child(2) li:last-child input').val()
-
-    $('#wrapper,#slider-wrap,#slider-wrap ul#slider li').width($('.container').width())
-    for(var i=0;i<6;i++) {
-      $('.selects div').append('<p></p>')
-    }
-    $('.selects p').each(function() {
-      $(this).append('<li></li><h6></h6>')
-    })
-    $('.selects p li').height($('.selects p li').width())
-    var seleObj = [{"img":"http://127.0.0.1:5500/img/7.png","title":"天猫"},{"img":"http://127.0.0.1:5500/img/8.png","title":"聚划算"},{"img":"http://127.0.0.1:5500/img/9.png","title":"天猫商城"},{"img":"http://127.0.0.1:5500/img/18.png","title":"天猫超市"},{"img":"http://127.0.0.1:5500/img/11.png","title":"外卖"},{"img":"http://127.0.0.1:5500/img/12.png","title":"天猫国际"},{"img":"http://127.0.0.1:5500/img/13.png","title":"充值中心"},{"img":"http://127.0.0.1:5500/img/14.png","title":"飞猪旅行"},{"img":"http://127.0.0.1:5500/img/15.png","title":"领金币"},{"img":"http://127.0.0.1:5500/img/16.png","title":"到家"},{"img":"http://127.0.0.1:5500/img/17.png","title":"宅猪"},{"img":"http://127.0.0.1:5500/img/10.png","title":"分类"}]
-    for(var i=0;i<seleObj.length;i++) {
-      $('.selects li').eq(i).css({'background': '#fff url(' + seleObj[i].img + ') no-repeat center','background-size': '70%'})
-      $('.selects h6').eq(i).html(seleObj[i].title)
-    }
-    $('.news div:first').width($('.news div:first').height())
-
-    for(var i=0;i<4;i++) {
-      $('.introduce').append('<ul><li><i class="fa fa-clock-o"></i><p>秒抢购</p></li><li></li><li></li></ul>')
-    }
-    $('.introduce ul:nth-child(2) li:first-child i').attr('class','fa fa-gift')
-    $('.introduce ul:nth-child(2) li:first-child p').html('有好货')
-    $('.introduce ul:nth-child(3) li:first-child i').attr('class','fa fa-usd')
-    $('.introduce ul:nth-child(3) li:first-child p').html('爱逛街')
-    $('.introduce ul:nth-child(4) li:first-child i').attr('class','fa fa-list-alt')
-    $('.introduce ul:nth-child(4) li:first-child p').html('必买清单')
-    $('.introduce ul').css('height',$('.introduce ul').width())
-
-    $.ajax({
-      type: "GET",
-      url: 'js/like.json',
-      success: function (data) {
-        var result = data.result;
-        $('header ul:nth-child(2) li:last-child input').attr('placeholder', result[result.length - 1].title)
-        for (var i=0;i<6;i++) {
-          $('#slider img').eq(i).attr('src', result[i].post)
-        }
-        for(var k=0;k<2;k++) {
-          $('.introduce ul').each(function() {
-            $(this).find('li').eq(k+1).css({'background':'#fff url(' + result[k].img + ') no-repeat center','background-size': '50%'})
-          })
-          $('.introduce ul li').eq(k+1).css({'background':'#fff url(' + result[k].img + ') no-repeat center','background-size': '50%'})
-        }
-      }
-    });
-
-    $.ajax({
-      type: "GET",
-      url: 'js/chat.json',
-      success: function (data) {
-        var result = data.result;
-        var statusArr = []
-        for (i in result) {
-          if (result[i].status == 1) {
-            statusArr.push(i)
-          }
-        }
-        $('header ul:nth-child(3) li div').attr("data-before", statusArr.length)
-      }
-    });
-
-    $.ajax({
-      type: "GET",
-      url: 'js/news.json',
-      success: function (data) {
-        for(i in data.result) {
-          $('.news h5').eq(i).html(data.result[i].title)
-        }
-      }
-    });
-
-  })
-</script>
-
+  <script src="js/init.js"></script>
 </html>
