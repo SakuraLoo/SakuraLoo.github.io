@@ -41,9 +41,9 @@
               <!-- 登录页面 - 表单 -->
               <section class="form">
                 <label for="username">用户名</label>
-                <input type="username" id="username" v-model="username" @click="UsernameClick()"/>
+                <input type="username" class="form_input" id="username" v-model="username" @click="UsernameClick()"/>
                 <label for="password">密码</label>
-                <input type="password" id="password" v-model="password" @click="PasswordClick()">
+                <input type="password" class="form_input" id="password" v-model="password" @click="PasswordClick()">
                 <p class="wrong" :style="{opacity: wrongShow ? 1 : 0}">用户名或密码填写错误！</p>
                 <input type="submit" id="submit" value="登录" @click="SubmitClick()"/>
               </section>

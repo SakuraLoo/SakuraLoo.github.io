@@ -5,7 +5,7 @@ $(function() {
 })
 
 _login.LoginInit = (() => {
-  new Vue({
+  _login.initVue = new Vue({
     el: '.login',
     data() {
       return {
@@ -15,6 +15,9 @@ _login.LoginInit = (() => {
         loginShow: parent._window.initVue._data.loginShow,
         wrongShow: false
       }
+    },
+    mounted() {
+      this.EnterInput();
     },
     methods: {
       UsernameClick() {
@@ -65,6 +68,16 @@ _login.LoginInit = (() => {
           }
         });
         this.FormEvent(); // 表单
+      },
+      // input回车
+      EnterInput() {
+        $(".form_input").bind("keydown", function (e) {
+          _login.theEvent = e || window.event;
+          _login.code = _login.theEvent.keyCode || _login.theEvent.which || _login.theEvent.charCode;
+          if (_login.code == 13) {
+            _login.initVue.FormEvent(); // 表单
+          }
+        });
       },
       // 表单
       FormEvent() {
