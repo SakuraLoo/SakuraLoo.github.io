@@ -1,0 +1,64 @@
+/*-- 自定义 --*/
+
+
+@media screen {
+  html,body,
+  .window,.web,.page, .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+html {
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+}
+section:after {
+  content: ""; 
+  position: absolute;
+  height: 1px;
+  display: block;
+  clear: both;
+}
+
+@mixin logoHeight() {
+  * {
+    height: $home_logo_height - 40px;
+    line-height: $home_logo_height - 40px;
+  }
+}
+
+@mixin absolute0() {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// 文本溢出：一行
+@mixin ellipsis() {
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+// 文本溢出：两行
+@mixin multiline-ellipsis() {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

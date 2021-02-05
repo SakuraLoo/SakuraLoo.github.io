@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
-@import "reset";
 @import "base";
-@import "icons";
-@import "containers";
+@import "button";
+@import "config";
+@import "modal";
+@import "reset";
 
-@import "tabbar";
+@import "self";
