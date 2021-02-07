@@ -1,14 +1,14 @@
 <template>
   <section>
     
-    header
+    photoPage
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "headerComponent",
+  name: "photoPage",
   data() {
     return {
     }

@@ -1,14 +1,14 @@
 <template>
   <section>
     
-    header
+    hobby
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "headerComponent",
+  name: "hobbyPage",
   data() {
     return {
     }

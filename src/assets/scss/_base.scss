@@ -2,15 +2,11 @@
 
 @media screen {
   html,body,
-  .window,.web,.page, .container, #app, #app div[data-v-57509004] {
+  section {
     width: 100%;
     height: 100%;
     margin: 0;
   }
-}
-
-html {
-  overflow: hidden;
 }
 
 body {

@@ -1,14 +1,14 @@
 <template>
   <section>
     
-    header
+    time
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "headerComponent",
+  name: "timePage",
   data() {
     return {
     }

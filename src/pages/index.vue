@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <section class="window">
     
-    <section class="window">
-      <!-- 登录页面 -->
-      <login v-if="show" loginShow="show" @childParam="GetChild()"></login>
-      <!-- 主要页面 -->
-      <home v-if="!show"></home>
-    </section>
+    <!-- 登录页面 -->
+    <login v-if="show" loginShow="show" @childParam="GetChild()"></login>
+    <!-- 主要页面 -->
+    <home v-if="!show"></home>
 
-  </div>
+  </section>
 </template>
 
 <script>
