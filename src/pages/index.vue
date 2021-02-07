@@ -3,9 +3,9 @@
     
     <section class="window">
       <!-- 登录页面 -->
-      <login v-if="loginShow"></login>
+      <login v-if="show" loginShow="show" @childParam="GetChild()"></login>
       <!-- 主要页面 -->
-      <home v-if="!loginShow"></home>
+      <home v-if="!show"></home>
     </section>
 
   </div>
@@ -22,7 +22,13 @@ export default {
   },
   data() {
     return {
-      loginShow: true
+      show: false
+    }
+  },
+  methods: {
+    // 接收子组件传过来的值
+    GetChild(params) {
+      this.show = params;
     }
   }
 }

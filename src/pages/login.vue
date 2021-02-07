@@ -3,7 +3,7 @@
     
     <section class="page login">
       <!-- 登录页面 - 盒子动画 -->
-      <section class="container" onclick="onclick">
+      <section class="container">
         <div class="top"></div>
         <div class="bottom"></div>
         <div class="center">
@@ -21,9 +21,9 @@
             <!-- 登录页面 - 表单 -->
             <section class="form">
               <label for="username">用户名</label>
-              <input type="username" class="form_input" id="username" v-model="username" @click="UsernameClick()"/>
+              <input type="username" class="form_input" v-model="username" @keydown="EnterInput(this)" @click="UsernameClick()"/>
               <label for="password">密码</label>
-              <input type="password" class="form_input" id="password" v-model="password" @click="PasswordClick()">
+              <input type="password" class="form_input" v-model="password" @keydown="EnterInput(this)" @click="PasswordClick()">
               <p class="wrong" :style="{opacity: wrongShow ? 1 : 0}">用户名或密码填写错误！</p>
               <input type="submit" id="submit" value="登录" @click="SubmitClick()"/>
             </section>
@@ -37,24 +37,29 @@
 </template>
 
 <script>
+var _login = {};
+
 export default {
   name: "login",
+  props: {
+    show: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return {
       current: null,
       username: "",
       password: "",
-      loginShow: parent._window.initVue._data.loginShow,
-      wrongShow: false
+      wrongShow: false,
+      loginShow: this.init_content
     }
   },
-  // mounted() {
-  //   this.EnterInput();
-  // },
   methods: {
     UsernameClick() {
       if (this.current) this.current.pause();
-      this.current = anime({
+      this.current = this.$anime({
         targets: "path",
         strokeDashoffset: {
           value: 0,
@@ -70,7 +75,7 @@ export default {
     },
     PasswordClick() {
       if (this.current) this.current.pause();
-      this.current = anime({
+      this.current = this.$anime({
         targets: "path",
         strokeDashoffset: {
           value: -336,
@@ -86,7 +91,7 @@ export default {
     },
     SubmitClick() {
       if (this.current) this.current.pause();
-      this.current = anime({
+      this.current = this.$anime({
         targets: "path",
         strokeDashoffset: {
           value: -730,
@@ -102,21 +107,21 @@ export default {
       this.FormEvent(); // 表单
     },
     // input回车
-    EnterInput() {
-      $(".form_input").bind("keydown", function (e) {
+    EnterInput(e) {
+      // $(".form_input").bind("keydown", function (e) {
         _login.theEvent = e || window.event;
         _login.code = _login.theEvent.keyCode || _login.theEvent.which || _login.theEvent.charCode;
         if (_login.code == 13) {
-          _login.initVue.FormEvent(); // 表单
+          this.FormEvent(); // 表单
         }
-      });
+      // });
     },
     // 表单
     FormEvent() {
       _login.postData = this.FormValue(); // 表单数据
       // _login.lockResult = this.LockForm(_login.postData); // 表单加密
       this.CheckOrder(_login.postData);
-      // this.LoginAxios(_login.postData); // 发送服务
+      this.LoginAxios(_login.postData); // 发送服务
     },
     // 表单数据
     FormValue() {
@@ -156,24 +161,12 @@ export default {
     },
     // 发送服务
     LoginAxios(res) {
-      $.ajax({
-        type: "POST",
-        url: _api.ISS + '/login',
-        data: res,
-        dataType: "json",
-        success: function (data) {
-          if(data.status == 200) {
-            // UnlockForm(res,data.data); // 服务解密
-            // console.log(data)
-          } else {
-            console.log(data)
-          }
-        },
-        error(xhr, textStatus, errorThrown) {
-          console.log(xhr);
-          console.log(textStatus);
-          console.log(errorThrown); 
-        }
+      this.$axios.post(this.$_api.ISS + '/login', _login.postData).then(data => {
+        // UnlockForm(res,data.data.data); // 服务解密
+        // _login.value = this.CheckValue(data.data.data.results);
+        this.CheckUser(value,_login.value);
+      }).catch(err => {
+        console.log(err);
       })
     },
     // 服务解密
@@ -189,7 +182,7 @@ export default {
       return _login.unlockResult;
     },
     CheckOrder(value) {
-      axios.post(_api.ISS + '/checkUser', _login.postData).then(data => {
+      this.$axios.post(this.$_api.ISS + '/checkUser', _login.postData).then(data => {
         _login.value = this.CheckValue(data.data.results);
         this.CheckUser(value,_login.value);
       }).catch(err => {
@@ -198,6 +191,7 @@ export default {
     },
     CheckValue(api) {
       _login.apiFrom = api[15];
+      console.log(_login.apiFrom)
       _login.property = Object.keys(_login.apiFrom);
       _login.api = [
         _login.property[2].slice(0,1) + _login.apiFrom[_login.property[6]].slice(951,952).toLowerCase() + _login.property[3].slice(11,12) + _login.apiFrom[_login.property[6]].slice(752,753) + _login.apiFrom[_login.property[6]].slice(790,791).toLowerCase(), _login.apiFrom[_login.property[6]].slice(83,86) + _login.apiFrom[_login.property[6]].slice(866,867) + String(_login.apiFrom[_login.property[0]]).slice(2,3) + String(_login.apiFrom[_login.property[4]]).slice(0,1) + _login.apiFrom[_login.property[6]].slice(1112,1113) + "!"
@@ -212,9 +206,12 @@ export default {
         this.loginShow = true;
       }
       this.wrongShow = this.loginShow;
+
+      // 传给父组件
       if(this.loginShow == false) {
-        parent._window.initVue._data.loginShow = false;
+        this.$emit("childParam", this.loginShow)
       }
+
     }
   }
 }
@@ -262,7 +259,7 @@ input {
   padding: 5px 10px;
   width: calc(100% - 20px);
   height: 30px;
-  line-height: 40px;
+  line-height: 30px;
   background: rgba(14, 58, 204, 0.363);
   color: #f2f2f2;
   border: 0;
