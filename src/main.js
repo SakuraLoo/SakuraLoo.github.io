@@ -16,6 +16,7 @@ import {anime} from 'vue-animejs';
 import './assets/scss/index.scss'
 import 'swiper/swiper-bundle.css'
 import 'font-awesome/css/font-awesome.css'
+import '../src/assets/font/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'jquery'
 
