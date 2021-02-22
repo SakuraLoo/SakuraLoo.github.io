@@ -8,11 +8,7 @@
 
 <script>
 export default {
-  name: "headerComponent",
-  data() {
-    return {
-    }
-  }
+  name: "headerComponent"
 }
 </script>
 
