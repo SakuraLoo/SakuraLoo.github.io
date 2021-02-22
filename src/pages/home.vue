@@ -6,8 +6,8 @@
     <section class="home_container">
       <!-- 菜单栏 -->
       <menu-component class="menu">menu</menu-component>
-      <!-- 生活 -->
-      <photo-page class="photo">photo</photo-page>
+      <!-- 天数 -->
+      <date-page class="photo">photo</date-page>
       <!-- 时间轴 -->
       <!-- <time-page class="time">time</time-page> -->
       <!-- 安利 -->
@@ -20,7 +20,7 @@
 <script>
 import headerComponent from '../components/header'
 import menuComponent from '../components/menu'
-import photoPage from './photo'
+import datePage from './date'
 import timePage from './time'
 import hobbyPage from './hobby'
 
@@ -28,7 +28,7 @@ export default {
   name: "home",
   components: {
     headerComponent,menuComponent,
-    photoPage,timePage,hobbyPage
+    datePage,timePage,hobbyPage
   },
   data() {
     return {

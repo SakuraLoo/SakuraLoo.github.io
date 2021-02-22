@@ -1,14 +1,14 @@
 <template>
   <section>
     
-    photoPage
+    datePage
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "photoPage",
+  name: "datePage",
   data() {
     return {
     }
