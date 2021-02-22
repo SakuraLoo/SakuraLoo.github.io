@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: true
     }
   },
   methods: {
