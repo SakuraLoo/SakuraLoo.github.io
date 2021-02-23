@@ -8,12 +8,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-<<<<<<< HEAD
-// 添加jQ
-var webpack = require('webpack');
-=======
 
->>>>>>> login
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -34,18 +29,6 @@ module.exports = {
       '@': resolve('src'),
     }
   },
-<<<<<<< HEAD
-  // 添加jQ
-  plugins: [
-   new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery",
-    jquery: "jquery",
-    "window.jQuery": "jquery"
-   })
-  ],
-=======
->>>>>>> login
   module: {
     rules: [
       {
