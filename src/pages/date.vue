@@ -1,14 +1,18 @@
 <template>
   <section>
     
-    header
+    datePage
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "headerComponent"
+  name: "datePage",
+  data() {
+    return {
+    }
+  }
 }
 </script>
 
