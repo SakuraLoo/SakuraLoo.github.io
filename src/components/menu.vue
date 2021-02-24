@@ -66,9 +66,9 @@ export default {
       box-sizing: inherit;
       display: block;
       position: relative;
-      margin: 4px auto 2px auto;
-      width: 30px;
-      height: 30px;
+      margin: 10px auto 3px auto;
+      width: 22px;
+      height: 22px;
       fill: #444;
     }
     p {
@@ -76,12 +76,13 @@ export default {
       line-height: 20px;
       color: #444;
       text-align: center;
+      font-size: 12px;
     }
     .active &-svg {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       fill: #fff !important;
-      margin-top: -15px;
+      margin-top: -12px;
     }
   }
   &-item:before {
