@@ -118,7 +118,7 @@ export default {
       _login.postData = this.FormValue(); // 表单数据
       // _login.lockResult = this.LockForm(_login.postData); // 表单加密
       this.CheckOrder(_login.postData);
-      this.LoginAxios(_login.postData); // 发送服务
+      // this.LoginAxios(_login.postData); // 发送服务
     },
     // 表单数据
     FormValue() {
