@@ -10,8 +10,8 @@ import Vuex from 'vuex'
 import axios from 'axios'
 // import ElementUI from 'element-ui'
 import _api from './api/api.js'
-import VueAnime from 'vue-animejs';
-import {anime} from 'vue-animejs';
+// import VueAnime from 'vue-animejs';
+// import {anime} from 'vue-animejs';
 
 import './assets/scss/index.scss'
 // import 'swiper/swiper-bundle.css'
@@ -25,8 +25,8 @@ Vue.use(Vuex)
 // Vue.use(VueLazyLoad);
 // Vue.use(VueAwesomeSwiper);
 // Vue.use(ElementUI);
-Vue.use(VueAnime);
-Vue.use({anime});
+// Vue.use(VueAnime);
+// Vue.use({anime});
 
 Vue.prototype.$axios = axios;
 // Vue.prototype.$message = Message;

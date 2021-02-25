@@ -6,11 +6,11 @@
     <section class="home_container">
       <section class="home_contain">
         <!-- 天数 -->
-        <date-page class="date"></date-page>
+        <date-page class="date" loginShow="show" @childParam2="GetChild2()" v-if="show"></date-page>
         <!-- 时间轴 -->
-        <!-- <time-page class="time"></time-page> -->
+        <time-page class="time"></time-page>
         <!-- 安利 -->
-        <!-- <hobby-page class="hobby"></hobby-page> -->
+        <hobby-page class="hobby"></hobby-page>
       </section>
     </section>
     <!-- 导航条 -->
@@ -34,6 +34,14 @@ export default {
   },
   data() {
     return {
+      show: true
+    }
+  },
+  methods: {
+    // 接收子组件传过来的值
+    GetChild2(params) {
+      console.log(params)
+      this.show = params;
     }
   }
 }

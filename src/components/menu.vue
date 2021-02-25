@@ -31,10 +31,26 @@
 <script>
 export default {
   name: "menuComponent",
+  props: {
+    show: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      loginShow: true
+    }
+  },
   mounted() {
     var _this = this;
+    // _this.order = _this.activeIndex;
     $('.menu-item').click(function() {
       _this.ClickItem(this);
+      // var index=$(".menu li").index(this);
+      // _this.order = index;
+      // _this.$emit("childParam2", _this.order)
+      _this.$emit("childParam2", _this.loginShow)
     })
   },
   methods: {
@@ -53,6 +69,8 @@ export default {
 
 .menu {
   box-shadow:rgba(0, 0, 0, 0.144) 0 0 10px;
+  padding: 0 25px;
+  width: calc(100% - 50px);
 
   &-item {
     position: relative;
