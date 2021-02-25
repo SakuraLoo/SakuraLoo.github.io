@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import Vuex from 'vuex'
+// import Vuex from 'vuex'
 // import VueLazyLoad from 'vue-lazyload'
 // import VueCookie from 'vue-cookie'
 // import { Message } from 'element-ui'
@@ -20,7 +20,7 @@ import './assets/scss/index.scss'
 // import 'element-ui/lib/theme-chalk/index.css'
 import 'jquery'
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 // Vue.use(VueCookie);
 // Vue.use(VueLazyLoad);
 // Vue.use(VueAwesomeSwiper);
@@ -30,7 +30,7 @@ Vue.use(Vuex)
 
 Vue.prototype.$axios = axios;
 // Vue.prototype.$message = Message;
-Vue.config.productionTip = false;
+// Vue.config.productionTip = false;
 Vue.prototype.$_api = _api;
 
 new Vue({
