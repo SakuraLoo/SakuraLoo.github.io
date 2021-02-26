@@ -6,7 +6,7 @@ import router from './router'
 import VueLazyLoad from 'vue-lazyload'
 // import VueCookie from 'vue-cookie'
 // import { Message } from 'element-ui'
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import axios from 'axios'
 // import ElementUI from 'element-ui'
 import _api from './api/api.js'
@@ -14,7 +14,7 @@ import VueAnime from 'vue-animejs';
 import {anime} from 'vue-animejs';
 
 import './assets/scss/index.scss'
-// import 'swiper/swiper-bundle.css'
+import 'swiper/swiper-bundle.css'
 // import 'font-awesome/css/font-awesome.css'
 // import '../src/assets/font/iconfont.css'
 // import 'element-ui/lib/theme-chalk/index.css'
@@ -22,7 +22,7 @@ import 'jquery'
 
 // Vue.use(Vuex)
 // Vue.use(VueCookie);
-// Vue.use(VueAwesomeSwiper);
+Vue.use(VueAwesomeSwiper);
 // Vue.use(ElementUI);
 Vue.use(VueAnime);
 Vue.use({anime});

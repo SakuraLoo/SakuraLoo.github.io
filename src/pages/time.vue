@@ -32,10 +32,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/scss/index.scss";
 
-.time_swiper {
-  height: 120px;
+.swiper-slide {
+  height: 150px;
+  img {
+    width: 100%;
+  }
 }
 </style>
