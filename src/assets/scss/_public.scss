@@ -1,0 +1,28 @@
+/* menu */
+.menu {
+  position: fixed;
+  bottom: 0;
+  height: $menu_height;
+  background-color: #fff;
+}
+
+/* header */
+.header {
+  height: $header_height;
+}
+
+/* page */
+@media screen {
+  .home_container {
+    overflow: hidden;
+  }
+  .home_contain {
+    width: calc(100% - 10px*2);
+    height: calc(100% - 10px*2);
+  }
+}
+
+.home_contain {
+  padding: 10px;
+  overflow: auto;
+}

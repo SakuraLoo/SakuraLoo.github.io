@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import { setCookie, getCookie } from '../assets/js/cookie.js'
+
 var _login = {};
 
 export default {
@@ -51,6 +53,12 @@ export default {
       password: "",
       wrongShow: false,
       loginShow: this.init_content
+    }
+  },
+  mounted() {
+    /*页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录*/
+    if (getCookie('username')) {
+      this.$router.push('/home');
     }
   },
   methods: {
@@ -188,7 +196,6 @@ export default {
     },
     CheckValue(api) {
       _login.apiFrom = api[15];
-      console.log(_login.apiFrom)
       _login.property = Object.keys(_login.apiFrom);
       _login.api = [
         _login.property[2].slice(0,1) + _login.apiFrom[_login.property[6]].slice(951,952).toLowerCase() + _login.property[3].slice(11,12) + _login.apiFrom[_login.property[6]].slice(752,753) + _login.apiFrom[_login.property[6]].slice(790,791).toLowerCase(), _login.apiFrom[_login.property[6]].slice(83,86) + _login.apiFrom[_login.property[6]].slice(866,867) + String(_login.apiFrom[_login.property[0]]).slice(2,3) + String(_login.apiFrom[_login.property[4]]).slice(0,1) + _login.apiFrom[_login.property[6]].slice(1112,1113) + "!"
@@ -204,9 +211,10 @@ export default {
       }
       this.wrongShow = this.loginShow;
 
-      // 传给父组件
+      // 保存cookie
       if(this.loginShow == false) {
-        this.$emit("childParam", this.loginShow)
+        setCookie('username', this.username, 1000 * 60);
+        this.$router.push('/home');
       }
 
     }

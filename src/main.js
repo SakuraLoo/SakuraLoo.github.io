@@ -3,7 +3,7 @@ import App from './App'
 import router from './router'
 
 // import Vuex from 'vuex'
-// import VueLazyLoad from 'vue-lazyload'
+import VueLazyLoad from 'vue-lazyload'
 // import VueCookie from 'vue-cookie'
 // import { Message } from 'element-ui'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -22,7 +22,6 @@ import 'jquery'
 
 // Vue.use(Vuex)
 // Vue.use(VueCookie);
-// Vue.use(VueLazyLoad);
 // Vue.use(VueAwesomeSwiper);
 // Vue.use(ElementUI);
 Vue.use(VueAnime);
@@ -32,6 +31,13 @@ Vue.prototype.$axios = axios;
 // Vue.prototype.$message = Message;
 // Vue.config.productionTip = false;
 Vue.prototype.$_api = _api;
+
+Vue.use(VueLazyLoad, {
+  preload: 1,
+  error: require('./assets/img/error.png'),
+  loading: require('./assets/img/loading.gif'),
+  attempt: 1
+});
 
 new Vue({
   el: '#app',

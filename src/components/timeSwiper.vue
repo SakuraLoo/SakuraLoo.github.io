@@ -1,14 +1,14 @@
 <template>
   <section>
     
-    datePage
+    swiper
 
   </section>
 </template>
 
 <script>
 export default {
-  name: "datePage",
+  name: "timeSwiper",
   data() {
     return {
     }
