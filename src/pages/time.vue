@@ -6,6 +6,7 @@
       <section class="home_contain">
 
         <time-swiper class="time_swiper"></time-swiper>
+        <time-list class="time_list"></time-list>
 
       </section>
     </section>
@@ -17,16 +18,31 @@
 
 <script>
 import timeSwiper from '../components/timeSwiper'
+import timeList from '../components/timeList'
 import menuComponent from '../components/menu'
 
 export default {
   name: "time",
   components: {
-    timeSwiper,menuComponent
+    timeSwiper,timeList,
+    menuComponent
   },
   data() {
     return {
-      active: 0
+      active: 0,
+      listArray: [
+        {
+          img: "https://i.im5i.com/2021/02/26/hlo4G.png",
+          title: "111",
+          detail: "aaa"
+        },
+        {
+          img: "https://i.im5i.com/2021/02/26/hlo4G.png",
+          title: "111",
+          detail: "aaa"
+        }
+      ]
+
     }
   }
 }
@@ -40,5 +56,8 @@ export default {
   img {
     width: 100%;
   }
+}
+.time_list {
+  margin-top: 20px;
 }
 </style>
