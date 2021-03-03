@@ -56,27 +56,28 @@ export default {
   padding: 10px;
 }
 
-  .img_box, .text_box {
-    float: left;
+.img_box, .text_box {
+  float: left;
+}
+.img_box {
+  width: 60px;
+  height: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
   }
-  .img_box {
-    width: 60px;
-    height: 100%;
-    overflow: hidden;
-    img {
-      width: 100%;
-    }
+}
+
+.text_box {
+  padding: 5px;
+  width: calc(100% - 60px - 10px*2);
+  h3 {
+    margin-bottom: 5px;
+    @include ellipsis();
   }
-  .text_box {
-    padding: 5px;
-    width: calc(100% - 60px - 10px*2);
-    h3 {
-      margin-bottom: 5px;
-      @include ellipsis();
-    }
-    p {
-      line-height: 15px;
-      @include multiline-ellipsis();
-    }
+  p {
+    line-height: 15px;
+    @include multiline-ellipsis();
   }
+}
 </style>

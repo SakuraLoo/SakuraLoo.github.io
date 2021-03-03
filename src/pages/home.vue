@@ -2,7 +2,6 @@
   <section>
     
     <!-- 菜单栏 -->
-    <header-component class="header">header</header-component>
     <section class="home_container">
       <section class="home_contain">
 
@@ -17,13 +16,12 @@
 </template>
 
 <script>
-import headerComponent from '../components/header'
 import menuComponent from '../components/menu'
 
 export default {
   name: "home",
   components: {
-    headerComponent,menuComponent
+    menuComponent
   },
   data() {
     return {

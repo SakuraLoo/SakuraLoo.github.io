@@ -37,7 +37,20 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/index.scss";
 
+@media screen and (min-width: 1000px) {
+  .menu {
+    width: calc(800px - 25px*2) !important;
+    left: calc((100% - 800px)/2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
 .menu {
+  position: fixed;
+  bottom: 0;
+  height: $menu_height !important;
+  background-color: #fff;
   box-shadow:rgba(0, 0, 0, 0.144) 0 0 10px;
   padding: 0 25px;
   width: calc(100% - 50px);
@@ -46,7 +59,7 @@ export default {
     position: relative;
     float: left;
     width: calc(100%/3);
-    height: 100%;
+    height: 80px;
     z-index: 0;
 
     &-icon {
@@ -68,13 +81,13 @@ export default {
     .active &-icon {
       width: 35px;
       height: 35px;
-      margin-top: -12px;
+      margin-top: -4px;
     }
   }
   &-item:before {
     content: "";
     position: absolute;
-    top: -20px;
+    top: -12px;
     left: calc(50% - 35px);
     width: 70px;
     height: 70px;

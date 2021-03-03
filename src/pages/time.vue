@@ -3,12 +3,10 @@
     
     <!-- 菜单栏 -->
     <section class="home_container">
-      <section class="home_contain">
 
-        <time-swiper class="time_swiper"></time-swiper>
-        <time-list class="time_list"></time-list>
+      <time-swiper class="time_swiper"></time-swiper>
+      <time-list class="time_list"></time-list>
 
-      </section>
     </section>
     <!-- 导航条 -->
     <menu-component class="menu" :active="active"></menu-component>
@@ -48,16 +46,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/scss/index.scss";
 
-.swiper-slide {
-  height: 150px;
-  img {
-    width: 100%;
-  }
-}
 .time_list {
-  padding: 20px 10px 50px 10px;
+  margin: 20px 20px 60px 20px;
 }
 </style>

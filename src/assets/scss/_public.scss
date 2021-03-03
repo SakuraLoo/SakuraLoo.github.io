@@ -1,28 +1,13 @@
-/* menu */
-.menu {
-  position: fixed;
-  bottom: 0;
-  height: $menu_height;
-  background-color: #fff;
-}
-
-/* header */
-.header {
-  height: $header_height;
-}
-
 /* page */
-@media screen {
+@media screen and (min-width:1000px) {
   .home_container {
-    overflow: hidden;
-  }
-  .home_contain {
-    width: calc(100% - 10px*2);
-    height: calc(100% - 10px*2);
+    margin: 0 auto;
+    width: 800px !important;
+    border-radius: 20px;
   }
 }
 
-.home_contain {
-  padding: 10px;
-  overflow: auto;
+.home_container {
+  overflow: hidden;
+  box-shadow:rgba(0, 0, 0, 0.089) 0 0 10px;
 }
