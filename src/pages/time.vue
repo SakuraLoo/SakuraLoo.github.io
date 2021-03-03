@@ -58,6 +58,6 @@ export default {
   }
 }
 .time_list {
-  margin-top: 20px;
+  padding: 20px 10px 50px 10px;
 }
 </style>
