@@ -3,11 +3,13 @@
     
     <!-- 菜单栏 -->
     <section class="home_container">
-      <section class="home_contain">
 
-        hobbyPage
+      <hobby-sort
+        class="hobby_page"
+        :sort="sort"
+        @changeComponent1Data="component1DataChange"
+      ></hobby-sort>
 
-      </section>
     </section>
     <!-- 导航条 -->
     <menu-component class="menu" :active="active"></menu-component>
@@ -16,16 +18,25 @@
 </template>
 
 <script>
+import hobbySort from '../components/hobbySort'
 import menuComponent from '../components/menu'
 
 export default {
   name: "hobby",
   components: {
+    hobbySort,
     menuComponent
   },
   data() {
     return {
-      active: 2
+      active: 2,
+      sort: 1
+    }
+  },
+  methods: {
+    // 接收子组件
+    component1DataChange(params) {
+      console.log(params)
     }
   }
 }
